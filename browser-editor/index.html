@@ -6,8 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>browser-editor</title>
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
-</html>
+ 
+
+<body>
+  <div data-test-id="editor-container" class="editor-container">
+    
+    <div class="editor-pane">
+      <div 
+        contenteditable="true"
+        role="textbox"
+        aria-multiline="true"
+        data-test-id="editor-input"
+        id="editor-input"
+        class="editor-input">
+      </div>
+    </div>
+
+    <div data-test-id="event-dashboard" class="dashboard">
+      <h3>Event Log</h3>
+      <div data-test-id="event-log-list" id="event-log-list" class="event-log-list">
+      </div>
+    </div>
+
+
+</div>
+
+  <script type="module" src="/src/main.js"></script>
+</body></html>
