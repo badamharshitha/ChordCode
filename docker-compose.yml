@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./browser-editor
+    ports:
+      - "3000:5173"
+    volumes:
+      - ./browser-editor:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:5173"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
